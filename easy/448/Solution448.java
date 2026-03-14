@@ -68,7 +68,7 @@ public class Solution448 {
     // Cyclic sort approach
     // Time complexity O(n) amortized
     // Space complexity O(1) extra space (excluding output list)
-     public List<Integer> bestFindDisappearedNumbers(int[] nums) {
+    public List<Integer> bestFindDisappearedNumbers(int[] nums) {
         List<Integer> ans = new ArrayList<>();
         int i = 0;
         while (i < nums.length) {
@@ -82,11 +82,36 @@ public class Solution448 {
                 i++;
             }
         }
-        for(int j = 0;j<nums.length;j++){
-            if(nums[j]-1 != j){
-                ans.add(j+1);
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] - 1 != j) {
+                ans.add(j + 1);
             }
         }
         return ans;
     }
+    
+    //I couldn't quite get my point across
+    //     public static List<Integer> myFindDisappearedNumbers(int[] nums) {
+    //     int n = nums.length;
+    //     List<Integer> ans = new ArrayList<>();
+    //     int temp = 0;
+
+    //     for (int i = 0; i < n; i++) {ы
+    //         if (nums[i] != i + 1) {
+    //             temp = nums[nums[i] - 1];
+    //             nums[nums[i] - 1] = nums[i];
+    //         }
+    //         if (temp > 0) {
+    //             nums[temp - 1] = temp;
+    //         }
+    //     }
+
+    //         for (int i = 0; i < n; i++) {
+    //         if (nums[i] != i + 1) {
+    //             ans.add(i+1);
+    //         }
+    //     }
+
+    //     return ans;
+    // }
 }
